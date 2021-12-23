@@ -102,6 +102,17 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Text('デフォルト表示'),
+            Text('太い文字', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text('イタリック', style: TextStyle(fontStyle: FontStyle.italic)),
+            Text('いろいろ', style: TextStyle(fontSize: 45)),
+            Container(
+              width: double.infinity,
+              color: Colors.black12,
+
+              child: Text('Text is right? or light?', textAlign: TextAlign.center,),
+            
+            ),
           ],
         ),
       ),
