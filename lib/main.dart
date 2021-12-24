@@ -109,9 +109,66 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               color: Colors.black12,
-
-              child: Text('Text is right? or light?', textAlign: TextAlign.center,),
-            
+              child: Text(
+                'Text is right? or light?',
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              color: Colors.blue,
+              width: 600,
+              height: 450,
+              padding: EdgeInsets.fromLTRB(20, 10, 1, 20),
+              margin: EdgeInsets.zero,
+              child: const Text('青色背景'),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.pink, width: 10),
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const <Widget>[
+                Text("1"),
+                Text("2"),
+                Text("3", style: TextStyle(color: Colors.black12)),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(onPressed: () {}, child: Text("click me here!")),
+                OutlinedButton(onPressed: null, child: Text("click me here!")),
+                ElevatedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      elevation: 5,
+                      primary: Colors.pinkAccent,
+                    ),
+                    child: Text("click me here!")),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.access_time),
+                  color: Colors.green,
+                  iconSize: 64,
+                  padding: EdgeInsets.zero,
+                ),
+                OutlinedButton.icon(
+                  onPressed: () {},
+                  onLongPress: () {},
+                  icon: Icon(
+                    Icons.wrong_location_sharp,
+                    size: 50,
+                    color: Colors.red,
+                  ),
+                  label: Text(
+                    "Touch and click me!",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(),
+                ),
+              ],
             ),
           ],
         ),
