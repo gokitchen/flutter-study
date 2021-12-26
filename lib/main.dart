@@ -71,107 +71,138 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+          // Herße we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Row(children: [
+        Icon(Icons.create),
+        Text(widget.title),
+      ])),
+      endDrawer: Drawer (
+        child: Center(
+          child: Text("new Drawer"),
+        ),
       ),
-      body: Center(
+      body: Column(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //x
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Text('デフォルト表示'),
-            Text('太い文字', style: TextStyle(fontWeight: FontWeight.bold)),
-            Text('イタリック', style: TextStyle(fontStyle: FontStyle.italic)),
-            Text('いろいろ', style: TextStyle(fontSize: 45)),
-            Container(
-              width: double.infinity,
-              color: Colors.black12,
-              child: Text(
-                'Text is right? or light?',
-                textAlign: TextAlign.center,
+        children: [
+          Column(
+            // Column is also a layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //x
+            // Invoke "debug painting" (press "p" in the console, choose the
+            // "Toggle Debug Paint" action from the Flutter Inspector in Android
+            // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+            // to see the wireframe for each widget.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const Text(
+                'You have pushed the button this many times:',
               ),
-            ),
-            Container(
-              color: Colors.blue,
-              width: 600,
-              height: 450,
-              padding: EdgeInsets.fromLTRB(20, 10, 1, 20),
-              margin: EdgeInsets.zero,
-              child: const Text('青色背景'),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.pink, width: 10),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
               ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
-                Text("1"),
-                Text("2"),
-                Text("3", style: TextStyle(color: Colors.black12)),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TextButton(onPressed: () {}, child: Text("click me here!")),
-                OutlinedButton(onPressed: null, child: Text("click me here!")),
-                ElevatedButton(
+              Text('デフォルト表示'),
+              Text('太い文字', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text('イタリック', style: TextStyle(fontStyle: FontStyle.italic)),
+              Text('いろいろ', style: TextStyle(fontSize: 45)),
+              Container(
+                width: double.infinity,
+                color: Colors.black12,
+                child: Text(
+                  'Text is right? or light?',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Container(
+                color: Colors.blue,
+                width: 600,
+                height: 450,
+                padding: EdgeInsets.fromLTRB(20, 10, 1, 20),
+                margin: EdgeInsets.zero,
+                child: const Text('青色背景'),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.pink, width: 10),
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const <Widget>[
+                  Text("1"),
+                  Text("2"),
+                  Text("3", style: TextStyle(color: Colors.black12)),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(onPressed: () {}, child: Text("click me here!")),
+                  OutlinedButton(
+                      onPressed: null, child: Text("click me here!")),
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        elevation: 5,
+                        primary: Colors.pinkAccent,
+                      ),
+                      child: Text("click me here!")),
+                  IconButton(
                     onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      elevation: 5,
-                      primary: Colors.pinkAccent,
+                    icon: Icon(Icons.access_time),
+                    color: Colors.green,
+                    iconSize: 64,
+                    padding: EdgeInsets.zero,
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () {},
+                    onLongPress: () {},
+                    icon: Icon(
+                      Icons.wrong_location_sharp,
+                      size: 50,
+                      color: Colors.red,
                     ),
-                    child: Text("click me here!")),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.access_time),
-                  color: Colors.green,
-                  iconSize: 64,
-                  padding: EdgeInsets.zero,
-                ),
-                OutlinedButton.icon(
-                  onPressed: () {},
-                  onLongPress: () {},
-                  icon: Icon(
-                    Icons.wrong_location_sharp,
-                    size: 50,
-                    color: Colors.red,
+                    label: Text(
+                      "Touch and click me!",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    style: ElevatedButton.styleFrom(),
                   ),
-                  label: Text(
-                    "Touch and click me!",
-                    style: TextStyle(color: Colors.black),
+                ],
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Text("Secound Text"),
+              TextButton(
+                  onPressed: () => {print("button pressed.")},
+                  child: Text("テスト用ボタン")),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.pink,
+                    size: 24.0,
                   ),
-                  style: ElevatedButton.styleFrom(),
-                ),
-              ],
-            ),
-          ],
-        ),
+                  Icon(Icons.audiotrack, color: Colors.green, size: 30.0),
+                  Icon(Icons.beach_access, color: Colors.blue, size: 36)
+                ],
+              )
+            ],
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
